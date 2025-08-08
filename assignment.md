@@ -25,7 +25,14 @@ returns = pd.DataFrame({
 Answer:
 
 ```python
+import pandas as pd
 
+returns = pd.DataFrame({
+    'MSFT': [0.05, 0.07, -0.01],
+    'IBM': [0.04, 0.02, 0.03]
+})
+
+returns["MSFT"].corr(returns["IBM"])
 ```
 
 ### Question 2
@@ -45,7 +52,15 @@ df = pd.DataFrame({
 Answer:
 
 ```python
+import pandas as pd
 
+df = pd.DataFrame({
+'A': {0: 'a', 1: 'b', 2: 'c'},
+'B': {0: 1, 1: 3, 2: 5},
+'C': {0: 2, 1: 4, 2: 6}
+})
+
+df.melt(id_vars=["A"], var_name ="B & C", value_name="value")
 ```
 
 ### Question 3
@@ -63,7 +78,13 @@ data = pd.Series(np.random.rand(len(dates)), index=dates)
 Answer:
 
 ```python
+import pandas as pd
+import numpy as np
 
+dates = pd.date_range("2023-01-01", "2023-01-31")
+data = pd.Series(np.random.rand(len(dates)), index=dates)
+
+data[4:15]
 ```
 
 ## Submission
